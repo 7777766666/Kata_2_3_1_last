@@ -89,7 +89,7 @@ public class UserDAOImpl implements UserDAO {
     public void save(User user) {
         try {
             PreparedStatement preparedStatement =
-                    connection.prepareStatement("INSERT INTO User VALUES(1, ?, ?, ?)");
+                    connection.prepareStatement("INSERT INTO User VALUES(6, ?, ?, ?)");
 
             preparedStatement.setString(1, user.getName());
             preparedStatement.setInt(2, user.getAge());

@@ -9,13 +9,13 @@ import java.util.Objects;
 
 public class User {
     private int id;
-//    @NotEmpty(message = "Name shouldn't be empty")
-//    @Size(min = 2, max = 30, message = "Name should be 2 and 30 characters")
+    @NotEmpty(message = "Name shouldn't be empty")
+    @Size(min = 2, max = 30, message = "Name should be 2 and 30 characters")
     private String name;
-//    @Min(value = 0, message = "Age should be greater than 0")
+    @Min(value = 0, message = "Age should be greater than 0")
     private int age;
-//    @NotEmpty(message = "Email shouldn't be empty")
-//    @Email(message = "Email should be valid")
+    @NotEmpty(message = "Email shouldn't be empty")
+    @Email(message = "Email should be valid")
     private String email;
 
     public User() {}
