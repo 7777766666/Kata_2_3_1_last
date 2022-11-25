@@ -3,18 +3,16 @@ package web.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import web.dao.UserDAO;
 import web.models.User;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Controller
-@RequestMapping("/users")
+	@RequestMapping("/users")
 public class UsersController {
 
 	private final UserDAO userDAO;
@@ -24,7 +22,7 @@ public class UsersController {
 		this.userDAO = userDAO;
 	}
 
-	@GetMapping
+	@GetMapping()
 	public String index(Model model) {
 		model.addAttribute("users", userDAO.index());
 		return "users/index";
@@ -41,7 +39,7 @@ public class UsersController {
 		return "users/new";
 	}
 
-	@PostMapping
+	@PostMapping()
 	public String create(@ModelAttribute("user") @Valid User user,
 						 BindingResult bindingResult) {
 		if (bindingResult.hasErrors())
@@ -52,7 +50,7 @@ public class UsersController {
 	}
 
 	@GetMapping("/{id}/edit")
-	public String edit(Model model, @ModelAttribute("id") int id) {
+	public String edit(Model model, @PathVariable("id") int id) {
 		model.addAttribute("user", userDAO.show(id));
 		return "users/edit";
 	}
