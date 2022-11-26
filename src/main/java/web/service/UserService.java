@@ -1,10 +1,10 @@
-package web.dao;
+package web.service;
 
 import web.models.User;
 import java.util.List;
 
-public interface UserDAO {
-    public List<User> index();
+public interface UserService {
+    List<User> index();
 
     public User show(int id);
 
