@@ -15,21 +15,22 @@ public class User {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NotEmpty(message = "Name shouldn't be empty")
-    @Size(min = 2, max = 30, message = "Name should be 2 and 30 characters")
+    @NotEmpty
+    @Size(min = 1, max = 55)
     @Column(name = "name")
     private String name;
 
-    @NotEmpty(message = "Name shouldn't be empty")
-    @Size(min = 2, max = 30, message = "Name should be 2 and 30 characters")
+    @NotEmpty
+    @Size(min = 1, max = 55)
     @Column(name = "last_name")
     private String lastName;
-    @Min(value = 0, message = "Age should be greater than 0")
+    @Min(value = 0)
     @Column(name = "age")
     private int age;
 
 
-    public User() {}
+    public User() {
+    }
 
     public User(String name, String lastName, int age) {
         this.name = name;
@@ -78,19 +79,4 @@ public class User {
                 ", age=" + age +
                 '}';
     }
-    //    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        User user = (User) o;
-//        return id == user.id && name == user.name && age == user.age && lastName == user.lastName;
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id, name, age, lastName);
-//    }
-
-
-
 }
