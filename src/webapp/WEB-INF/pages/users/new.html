@@ -7,19 +7,24 @@
 <body>
 
 <form th:method="POST" th:action="@{/}" th:object="${user}">
-  <label for="name">Enter name</label>
-  <input type="text" th:field="*{name}" id="name"/>
-  <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+
+  <label for="name"> Entered name user: </label>
+  <input type="text" th:field="*{name}" id="name">
   <br/>
-  <label for="age">Enter age</label>
-  <input type="text" th:field="*{age}" id="age"/>
-  <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
+  <hr/>
+
+  <label for="lastName">Введите фаимилию </label>
+  <input type="text" th:field="*{lastName}" id="lastName">
   <br/>
-  <label for="email">Enter email</label>
-  <input type="text" th:field="*{email}" id="email"/>
-  <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+  <hr/>
+
+  <label for="age"> Enter age please </label>
+  <input type="text" th:field="*{age}" id="age">
   <br/>
-  <input type="submit" value="Create!"/>
+  <hr/>
+  <input type="submit" value="Create new user">
+
+
 </form>
 
 </body>

@@ -4,7 +4,7 @@ import web.models.User;
 import java.util.List;
 
 public interface UserService {
-    List<User> index();
+    List<User> getAllUsers();
 
     public User show(int id);
 

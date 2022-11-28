@@ -80,31 +80,6 @@ public class WebConfig implements WebMvcConfigurer {
         return dataSource;
     }
 
-//    private Properties hibernateProperties() {
-//        Properties properties = new Properties();
-//        properties.put("hibernate.dialect", env.getRequiredProperty("hibernate.dialect"));
-//        properties.put("hibernate.show_sql", env.getRequiredProperty("hibernate.show_sql"));
-//
-//        return properties;
-//    }
-//
-//    @Bean
-//    public LocalSessionFactoryBean sessionFactory() {
-//        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-//        sessionFactory.setDataSource(dataSource());
-//        sessionFactory.setPackagesToScan("web/models");
-//        sessionFactory.setHibernateProperties(hibernateProperties());
-//
-//        return sessionFactory;
-//    }
-
-//    @Bean
-//    public PlatformTransactionManager hibernateTransactionManager() {
-//        HibernateTransactionManager transactionManager = new HibernateTransactionManager();
-//        transactionManager.setSessionFactory(sessionFactory().getObject());
-//
-//        return transactionManager;
-//    }
 
     @Bean
     public LocalContainerEntityManagerFactoryBean getEntityManager() {

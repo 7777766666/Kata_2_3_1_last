@@ -19,19 +19,22 @@ public class User {
     @Size(min = 2, max = 30, message = "Name should be 2 and 30 characters")
     @Column(name = "name")
     private String name;
+
+    @NotEmpty(message = "Name shouldn't be empty")
+    @Size(min = 2, max = 30, message = "Name should be 2 and 30 characters")
+    @Column(name = "last_name")
+    private String lastName;
     @Min(value = 0, message = "Age should be greater than 0")
     @Column(name = "age")
     private int age;
-    @NotEmpty(message = "Email shouldn't be empty")
-    @Email(message = "Email should be valid")
-    @Column(name = "email")
-    private String email;
+
 
     public User() {}
-    public User(String name, int age, String email) {
+
+    public User(String name, String lastName, int age) {
         this.name = name;
+        this.lastName = lastName;
         this.age = age;
-        this.email = email;
     }
 
     public int getId() {
@@ -50,6 +53,14 @@ public class User {
         this.name = name;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     public int getAge() {
         return age;
     }
@@ -58,34 +69,28 @@ public class User {
         this.age = age;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return id == user.id && name == user.name && age == user.age && email == user.email;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, age, email);
-    }
-
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name=" + name +
-                ", lastname=" + age +
-                ", email=" + email +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
                 '}';
     }
+    //    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        User user = (User) o;
+//        return id == user.id && name == user.name && age == user.age && lastName == user.lastName;
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, name, age, lastName);
+//    }
+
+
+
 }
