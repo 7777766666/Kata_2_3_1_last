@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>New user</title>
@@ -8,21 +8,21 @@
 
 <form th:method="POST" th:action="@{/}" th:object="${user}">
 
-  <label for="name"> Entered name user: </label>
-  <input type="text" th:field="*{name}" id="name">
-  <br/>
-  <hr/>
+    <label for="name"> Entered name user: </label>
+    <input type="text" th:field="*{name}" id="name">
+    <br/>
+    <hr/>
 
-  <label for="lastName">Введите фаимилию </label>
-  <input type="text" th:field="*{lastName}" id="lastName">
-  <br/>
-  <hr/>
+    <label for="lastName">Введите фаимилию </label>
+    <input type="text" th:field="*{lastName}" id="lastName">
+    <br/>
+    <hr/>
 
-  <label for="age"> Enter age please </label>
-  <input type="text" th:field="*{age}" id="age">
-  <br/>
-  <hr/>
-  <input type="submit" value="Create new user">
+    <label for="age"> Enter age please </label>
+    <input type="text" th:field="*{age}" id="age">
+    <br/>
+    <hr/>
+    <input type="submit" value="Create new user">
 
 
 </form>

@@ -12,7 +12,6 @@ import javax.validation.Valid;
 
 
 @Controller
-//	@RequestMapping("/users")
 public class UsersController {
 
 	private final UserService userService;
@@ -24,7 +23,7 @@ public class UsersController {
 
 	@GetMapping("/users")
 	public String getAllUsers(Model model) {
-		model.addAttribute("users", userService.getAllUsers());
+		model.addAttribute("all", userService.getAllUsers());
 		return "users/users";
 	}
 
